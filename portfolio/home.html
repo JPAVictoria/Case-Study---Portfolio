@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Navigation</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+    <body>
+        <div class="navbar">
+            <ul>
+                <li><a href="home.html" id="home-link">Home</a></li>
+                <li><a href="skills.html" id="contact-link">Skills</a></li>
+                <li><a href="contact.html" id="skills-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <div class="text-content">
+                <h1>I’m Dre, a Wannabe Programmer who likes to build, build, and build projects.</h1>
+                <p>I create clean, maintainable code and seamless experiences that merge design with functionality. Solving real-world problems through technology while always learning is what drives me.</p>
+            </div>
+            <div class="card-container">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h2>I’m a self-taught programmer.</h2>
+                        <p>I started way back 2020 using Scratch to solidify my logic in this field. Then transitioned to web development with HTML, CSS, Javascript, React, and Next JS.</p>
+                        <img src="assets/scratch.png" alt="scratch" class="img-one"> 
+                    </div>
+                    <div class="card">
+                        <h2>I’m a fan of pop, R&B, and rap music.</h2>
+                        <div class="image-grid">
+                            <img src="assets/hurryip.jpg" alt="Music 1">
+                            <img src="assets/journals.png" alt="Music 2">
+                            <img src="assets/sos.jfif" alt="Music 3">
+                            <img src="assets/chromakopia.jfif" alt="Music 4">
+                            <img src="assets/blond.jpeg" alt="Music 5">
+                            <img src="assets/ctrl.jfif" alt="Music 6">
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>I love anything that involves art.</h2>
+                        <p>It all started with Logan Paul’s <strong>99 Originals</strong>. From there, I got hooked on all sorts of art especially in my field, such as UI/UX design.</p>
+                        <img src="assets/originals.jfif" alt="scratch" class="img-two"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dots">
+            <div class="dot active" onclick="changeCard(0)"></div>
+            <div class="dot" onclick="changeCard(1)"></div>
+            <div class="dot" onclick="changeCard(2)"></div>
+        </div>
+    
+        <footer class="footer">
+            <div class="footer-container">
+                <p class="footer-text">Crafted by Andre Victoria, 2025</p>
+                <div class="footer-links">
+                    <a href="https://github.com/JPAVictoria" target="_blank" class="footer-icon github">
+                        <img src="assets/github.png" alt="GitHub">
+                    </a>
+                    <a href="https://www.linkedin.com/in/jpavictoria/" target="_blank" class="footer-icon">
+                        <img src="assets/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="mailto:janpaulandrevictoria@gmail.com" class="footer-icon">
+                        <img src="assets/gmail.png" alt="Gmail">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    <script>
+const cardWrapper = document.querySelector('.card-wrapper');
+const cards = document.querySelectorAll('.card');
+const dots = document.querySelectorAll('.dot');
+let currentCard = 0;
+
+function changeCard(index) {
+    const cardWidth = document.querySelector('.card').offsetWidth + 30; 
+    const totalCards = cards.length;
+    let translateValue;
+    if (index === totalCards - 1) {
+        translateValue = -(index * cardWidth) + (cardWidth / 2);
+
+        cards[index].classList.add('last-card-expanded');
+    } else {
+        translateValue = -index * cardWidth;
+
+        cards[totalCards - 1].classList.remove('last-card-expanded');
+    }
+    cardWrapper.style.transform = `translateX(${translateValue}px)`;
+    dots[currentCard].classList.remove('active');
+    currentCard = index;
+    dots[currentCard].classList.add('active');
+}
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

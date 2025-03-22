@@ -1,0 +1,272 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #e8fff8;
+  font-family: "Poppins", "Montserrat", "Inter", sans-serif;
+}
+
+.skills-section {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  margin-left: 150px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  margin: 0;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 6px -2px;
+}
+
+.card-img-container {
+  width: auto;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.card-img {
+  width: 95%;
+  max-width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  color: #009879;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.two-column-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  margin-top: 5px;
+  gap: 2px;
+}
+
+.two-column-list li {
+  padding: 2px 0;
+  letter-spacing: 0.8px;
+}
+
+.skills-content {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.skills-content h2 {
+  color: #009879;
+  font-size: 64px;
+  width: 75%;
+  font-family: Poppins;
+  margin-top: -15px;
+}
+
+.skills-content p {
+  font-size: 16px;
+  color: #2d2d2d;
+  opacity: 80%;
+  width: 75%;
+  font-family: Poppins;
+  margin-top: -35px;
+  letter-spacing: 0.8px;
+  line-height: 150%;
+}
+
+.skills-content ul {
+  margin-top: 30px;
+  padding-left: 20px;
+  opacity: 80%;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card,
+.skills-content {
+  opacity: 0;
+}
+
+.card {
+  animation: slideUp 0.6s ease-in-out forwards;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.card:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.skills-content {
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1.2s;
+}
+
+@media (max-width: 1024px) {
+  .skills-section {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .skills-content {
+    text-align: center;
+    margin: 0;
+    width: 90%;
+  }
+
+  .skills-content h2 {
+    font-size: 48px;
+    width: 100%;
+  }
+
+  .skills-content p {
+    font-size: 14px;
+    width: 100%;
+    margin-top: -20px;
+  }
+
+  .skills-container {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .card {
+    width: 200px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 10px;
+  }
+
+  .skills-content h2 {
+    font-size: 36px;
+  }
+
+  .skills-content p {
+    font-size: 12px;
+    margin-top: -10px;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-content h2 {
+    font-size: 28px;
+  }
+
+  .skills-content p {
+    font-size: 12px;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .skills-content ul {
+    padding-left: 15px;
+  }
+
+  .skills-content ul li {
+    padding-left: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-content ul {
+    padding-left: 10px;
+    list-style-position: inside;
+  }
+
+  .skills-content ul li {
+    padding-left: 3px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-content ul {
+    padding-left: 5px;
+  }
+
+  .skills-content ul li {
+    padding-left: 2px;
+    font-size: 12px;
+  }
+}
